@@ -81,12 +81,12 @@
     boarId=document.getElementById("boarId").value;
     userIdId=document.getElementById("userId").value;
     if (y == 0){
-    sendMessage(userId+boarId+':led_state:0')
+    sendMessage(userId+boarId+':led_state:ON')
     document.getElementById("led_state").innerHTML ="ON";  
     y=1;}
     else {
      y=0;
-     sendMessage(userId+boarId+':led_state:1')
+     sendMessage(userId+boarId+':led_state:OFF')
      document.getElementById("led_state").innerHTML ="OFF"; 
      }
   }
@@ -94,12 +94,12 @@
     boarId=document.getElementById("boarId").value;
     userIdId=document.getElementById("userId").value;
     if (x == 0){
-    sendMessage(userId+boarId+':led_state1:0')
+    sendMessage(userId+boarId+':led_state1:ON')
     document.getElementById("led_state1").innerHTML ="ON";  
     x=1;}
     else {
      x=0;
-     sendMessage(userId+boarId+':led_state1:1')
+     sendMessage(userId+boarId+':led_state1:OFF')
      document.getElementById("led_state1").innerHTML ="OFF"; 
      }
   }
