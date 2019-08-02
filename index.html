@@ -64,11 +64,8 @@
   }
   // called when a message arrives
   function onMessageArrived(message) {
-    console.log("onMessageArrived:"+
-	message.payloadString);
-	sensor=document.getElementById('sensor_val')
-	sensor.innerHTML=message.payloadString
-//	doAction(message.payloadString);
+    console.log("onMessageArrived:"+message.payloadString);
+    doAction(message.payloadString);
   }
   
     // called when a message arrives
@@ -76,7 +73,7 @@
     message = new Paho.MQTT.Message(msg);
     message.destinationName = "/cloudmqtt";
     client.send(message);
-	
+    document.getElementById("led_state").innerHTML = message;
   }
     // called when a message arrives
  var y=0;
@@ -108,8 +105,8 @@
      }
   }
   // called when a message arrives
- /* myName='leo';
-  led_state=0;
+ myName='leo';
+ led_state=0;
   function doAction(msg) {
     n=msg.split(":")[0];
 	f=msg.split(":")[1];
@@ -122,6 +119,10 @@
 			led_state=v;
 			document.getElementById("led_state").innerHTML=led_state;
 			break;
+		  case 'led_state1':
+			led_state=v;
+			document.getElementById("led_state1").innerHTML=led_state;
+			break;
 		  case 'sensor_val':
 			sensor_val=v;
 			document.getElementById("sensor_val").innerHTML=sensor_val;
@@ -131,8 +132,7 @@
 			// code block
 		}
 	   }
-	 }
-*/  
+	 } 
 </script>
 	</body>
 </html>
