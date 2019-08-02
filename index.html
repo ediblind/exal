@@ -79,6 +79,8 @@
 	
   }
     // called when a message arrives
+ var y=0;
+ var x=0;
   function led() {
     boarId=document.getElementById("boarId").value;
     userIdId=document.getElementById("userId").value;
@@ -95,15 +97,15 @@
   function led1() {
     boarId=document.getElementById("boarId").value;
     userIdId=document.getElementById("userId").value;
-    if (y == 0){
+    if (x == 0){
     sendMessage(userId+boarId+':led_state1:0')
     document.getElementById("led_state1").innerHTML ="ON";  
-    y=1;}
+    x=1;}
     else {
-     y=0;
+     x=0;
      sendMessage(userId+boarId+':led_state1:1')
      document.getElementById("led_state1").innerHTML ="OFF"; 
-     })
+     }
   }
   // called when a message arrives
   myName='leo';
